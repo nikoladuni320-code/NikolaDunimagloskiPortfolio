@@ -17,7 +17,12 @@
     <header class="site-header">
       <div class="container nav">
         <a href="#home" class="brand">Nikola Dunimagloski</a>
-        <nav class="nav-links">
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-navigation" aria-label="Toggle navigation">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+        <nav class="nav-links" id="primary-navigation" aria-label="Primary navigation">
           <a href="#about">About</a>
           <a href="#work">Work</a>
           <a href="#services">Services</a>
@@ -142,32 +147,60 @@
 
           <div class="work-grid">
             <article class="project">
-              <img src="../Portfolio/assets/pic/movie_site_project.png" alt="Movie Site project" />
+              <a href="assets/projects/movie_site_project/movie_site_project.png" target="_blank" rel="noopener noreferrer" aria-label="Show the full Movie Site screenshot">
+                <img class="project-image--movie-site" src="assets/projects/movie_site_project/movie_site_project.png" alt="Movie Site project screenshot" />
+              </a>
               <div class="project-content">
                 <div class="meta"><span>Web Design</span><span>2024</span></div>
                 <h3>Movie Site</h3>
                 <p>Movie-focused website concept built with a clean layout and modern digital storytelling.</p>
-                <a href="#">View project →</a>
+                <a href="assets/projects/movie_site_project/movie_site_project.png" target="_blank" rel="noopener noreferrer">View screenshot →</a>
               </div>
             </article>
 
             <article class="project">
-              <img src="../Portfolio/assets/pic/movie_app_project.png" alt="Movie App project" />
+              <div class="project-preview" aria-hidden="true">
+                <span>JavaScript</span>
+              </div>
+              <div class="project-content">
+                <div class="meta"><span>JavaScript</span><span>2024</span></div>
+                <h3>JavaScript Project</h3>
+                <p>Interactive JavaScript project with custom styling and browser-based functionality.</p>
+                <a href="assets/working_projects/javascript_project/index.html" data-project-link data-project-name="JavaScript Project">View project →</a>
+              </div>
+            </article>
+
+            <article class="project">
+              <a href="assets/projects/movie_app_project/movie_app_project.png" target="_blank" rel="noopener noreferrer" aria-label="Show the full Movie App screenshot">
+                <img class="project-image--movie-site" src="assets/projects/movie_app_project/movie_app_project.png" alt="Movie App project screenshot" />
+              </a>
               <div class="project-content">
                 <div class="meta"><span>App Design</span><span>2025</span></div>
                 <h3>Movie App</h3>
                 <p>Mobile app-style concept for browsing movies with an intuitive and modern user interface.</p>
-                <a href="#">View project →</a>
+                <a href="assets/projects/movie_app_project/movie_app_project.png" target="_blank" rel="noopener noreferrer">View screenshot →</a>
               </div>
             </article>
 
             <article class="project">
-              <img src="../Portfolio/assets/pic/uxui_project.png" alt="UX/UI project" />
+              <div class="project-preview" aria-hidden="true">
+                <span>Bootstrap</span>
+              </div>
               <div class="project-content">
-                <div class="meta"><span>UX / UI</span><span>2024</span></div>
-                <h3>UX/UI Project</h3>
-                <p>Interface concept focused on usability, visual hierarchy, and polished user experience.</p>
-                <a href="#">View project →</a>
+                <div class="meta"><span>Bootstrap</span><span>2025</span></div>
+                <h3>Movie App Project</h3>
+                <p>Working Bootstrap application for browsing and discovering movies.</p>
+                <a href="assets/working_projects/bootstrap-project/index.html" data-project-link data-project-name="Movie App Project">View project →</a>
+              </div>
+            </article>
+
+            <article class="project">
+              <img src="assets/screenshots/bmw_page_project.png" alt="BMW automotive web page project" />
+              <div class="project-content">
+                <div class="meta"><span>Automotive</span><span>2024</span></div>
+                <h3>BMW Automotive Page</h3>
+                <p>Interactive BMW showcase with multiple vehicle models, museum, and M-division sections.</p>
+                <a href="assets/working_projects/Automotive web-page/index.html" data-project-link data-project-name="BMW Automotive Page">View project →</a>
               </div>
             </article>
           </div>
@@ -201,23 +234,24 @@
           </div>
 
           <div class="form-box">
-            <form>
+            <form id="contact-form" novalidate>
               <label>
                 Name
-                <input type="text" placeholder="Your name" />
+                <input id="name" name="name" type="text" placeholder="Your name" required />
               </label>
 
               <label>
                 Email
-                <input type="email" placeholder="Your email" />
+                <input id="email" name="email" type="email" placeholder="Your email" required />
               </label>
 
               <label>
                 Message
-                <textarea rows="5" placeholder="Tell me about your project..."></textarea>
+                <textarea id="message" name="message" rows="5" placeholder="Tell me about your project..." required></textarea>
               </label>
 
               <button type="submit" class="btn btn-primary">Send Message</button>
+              <p id="form-status" class="form-status" role="status" aria-live="polite"></p>
             </form>
           </div>
         </div>
@@ -226,7 +260,7 @@
 
     <footer class="site-footer">
       <div class="container footer-inner">
-        <p>© 2026 Nikola Dunimagloski</p>
+        <p>© <span id="current-year"></span> Nikola Dunimagloski</p>
         <div class="footer-links">
           <a href="#">Instagram</a>
           <a href="#">Dribbble</a>
@@ -234,5 +268,7 @@
         </div>
       </div>
     </footer>
+
+    <script src="assets/script.js"></script>
   </body>
 </html>
